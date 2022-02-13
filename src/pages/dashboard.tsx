@@ -35,13 +35,11 @@ const options = {
             color: theme.colors.gray[600],
         },
         categories: [
-            "2021-03-18T00:00:00.000Z",
-            "2021-03-19T00:00:00.000Z",
-            "2021-03-20T00:00:00.000Z",
-            "2021-03-21T00:00:00.000Z",
-            "2021-03-22T00:00:00.000Z",
-            "2021-03-23T00:00:00.000Z"
-
+            '2021-03-18T00:00:00.000Z',
+            '2021-03-19T00:00:00.000Z',
+            '2021-03-20T00:00:00.000Z',
+            '2021-03-22T00:00:00.000Z',
+            '2021-03-23T00:00:00.000Z'
         ]
     },
     fill: {
@@ -91,7 +89,7 @@ export default function Dashboard () {
                           borderRadius="8">
                             
                             <Text fontSize="lg" mb="4">Inscritos da semana</Text>
-                            <Chart option={options} series={series} type="area" height="160" /> 
+                            <Chart options={options} series={series} type="area" height={160} />
 
                         </Box>
 
