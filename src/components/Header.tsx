@@ -17,7 +17,7 @@ export function Header() {
               fontSize="3xl"
               fontWeight="bold"
               letterSpacing="tight"
-              w="64">dashgo<Text
+              w="48">dashgo<Text
               as="span"
               color="pink.500">.</Text>
             </Text>
