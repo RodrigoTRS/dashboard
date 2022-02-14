@@ -1,4 +1,5 @@
 import { Box, Button, Flex, Heading, Icon, Table, Th, Thead, Tr, Checkbox, Tbody, Td, Text, useBreakpointValue } from "@chakra-ui/react";
+import Head from "next/head";
 import Link from "next/link";
 import { RiAddLine, RiPencilLine } from "react-icons/ri";
 import { Header } from "../../components/Header/index";
@@ -15,6 +16,10 @@ export default function UserList() {
     return (
 
         <Box>
+            <Head>
+                <title>Dashgo. | Users</title>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+            </Head>
 
             <Header />
 

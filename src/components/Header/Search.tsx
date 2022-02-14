@@ -1,19 +1,23 @@
-import { Box, Flex, Icon, Input, useBreakpointValue } from "@chakra-ui/react";
+import { Flex, Icon, Input, useBreakpointValue } from "@chakra-ui/react";
+import { useRef } from "react";
 import { RiSearchLine } from "react-icons/ri";
 
 export function Search() {
+
+  const searchInputRef = useRef<HTMLInputElement>(null) 
+  
   const isMobile = useBreakpointValue({
     base: true,
     lg: false
-})
+  });
 
-if (isMobile) {
+  if (isMobile) {
+    return (
+    null
+    );
+  };
+
   return (
-   null
-  );
-} 
-
-return (
     <Flex /* Search bar */
     as="label"
     flex="1"
@@ -34,7 +38,8 @@ return (
     }}
     _pressed={{
         borderColor: "gray.500"
-    }}>
+    }}
+    >
 
       <Input
         color="gray=50"
@@ -44,11 +49,13 @@ return (
         color:
         'gray.400'}}
         px="0"
-        mr="4">
+        mr="4"
+        ref={searchInputRef}>
+
       </Input>
 
       <Icon as={RiSearchLine} fontSize="xl" />
-      
+        
     </Flex>
   );
 }

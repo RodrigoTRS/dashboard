@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic'
 import { ApexOptions } from 'apexcharts';
 import { Header } from "../components/Header/index";
 import { Sidebar } from "../components/Sidebar";
+import Head from "next/head";
 
 const Chart = dynamic(() => import('react-apexcharts'), {
     ssr: false
@@ -71,6 +72,10 @@ const series = [{
 export default function Dashboard () {
     return (
         <Flex direction="column" h="100vh">
+            <Head>
+                <title>Dashgo. | Dashboard</title>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+            </Head>
             <Header />
                 <Flex
                     w="100%"

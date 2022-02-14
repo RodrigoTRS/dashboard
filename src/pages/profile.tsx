@@ -1,10 +1,15 @@
 import { Box, Divider, Flex, Heading } from "@chakra-ui/react";
+import Head from "next/head";
 import { Header } from "../components/Header/index";
 import { Sidebar } from "../components/Sidebar";
 
 export default function Profile() {
     return (
     <>
+        <Head>
+            <title>Dashgo. | Profile</title>
+            <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        </Head>
         <Header />
         <Flex
             w="100%"

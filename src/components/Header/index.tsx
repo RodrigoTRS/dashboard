@@ -29,7 +29,7 @@ export function Header() {
 
             { !isWideVersion && (
                 <IconButton
-                    aria-label="Open navigatin"
+                    aria-label="Open navigation"
                     icon={<Icon as={RiMenuLine} />}
                     fontSize="24"
                     variant="unstyled"
@@ -41,8 +41,6 @@ export function Header() {
 
                 </IconButton>
             )}
-
-
             <Logo />
             <Search />
             <NotificationsNav />
