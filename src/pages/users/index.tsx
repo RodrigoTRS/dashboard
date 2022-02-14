@@ -1,10 +1,17 @@
-import { Box, Button, Flex, Heading, Icon, Table, Th, Thead, Tr, Checkbox, Tbody, Td, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Icon, Table, Th, Thead, Tr, Checkbox, Tbody, Td, Text, useBreakpointValue } from "@chakra-ui/react";
+import Link from "next/link";
 import { RiAddLine, RiPencilLine } from "react-icons/ri";
 import { Header } from "../../components/Header/index";
 import { Pagination } from "../../components/Pagination";
 import { Sidebar } from "../../components/Sidebar";
 
 export default function UserList() {
+
+    const isWideVersion = useBreakpointValue({
+        base: false,
+        md: true
+    })
+
     return (
 
         <Box>
@@ -40,27 +47,29 @@ export default function UserList() {
                             Usuários
                         </Heading>
 
-                        <Button
-                        as="a"
-                        size="sm"
-                        fontSize="sm"
-                        colorScheme="pink"
-                        leftIcon={<Icon as={RiAddLine}/>}
-                        href="/users/create">
-                            Criar novo
-                        </Button>
+                        <Link href="/users/create" passHref>
+                            <Button
+                            as="a"
+                            size="sm"
+                            fontSize="sm"
+                            colorScheme="pink"
+                            leftIcon={<Icon as={RiAddLine}/>}
+                            >
+                                Criar novo
+                            </Button>
+                        </Link>
 
                     </Flex>
 
-                    <Table colorScheme="whiteAlpha" >
+                    <Table colorScheme="whiteAlpha">
                         
                         <Thead>
                             <Tr bg="#181823">
-                                <Th px="6" color="gray.300" width="8">
+                                <Th px={["4", "4", "6"]} color="gray.300" width="8">
                                     <Checkbox colorScheme="pink" />
                                 </Th>
                                 <Th>Usuário</Th>
-                                <Th>Data de cadastro</Th>
+                                { isWideVersion && <Th>Data de cadastro</Th> }
                                 <Th width="0"></Th>
                             </Tr>
                         </Thead>
@@ -68,7 +77,7 @@ export default function UserList() {
                         <Tbody>
 
                             <Tr>
-                                <Td  px="6">
+                                <Td  px={["4", "4", "6"]}>
                                     <Checkbox colorScheme="pink" />
                                 </Td>
                                 <Td>
@@ -77,21 +86,21 @@ export default function UserList() {
                                         <Text fontSize="sm" color="gray.300">rodrigoteix1998@gmail.com</Text>
                                     </Box>
                                 </Td>
-                                <Td>04 de Abril de 2021</Td>
+                                { isWideVersion && <Td>03 de Abril de 2021</Td> }
                                 <Td>
-                                    <Button
+                                    {isWideVersion && <Button
                                     as="a"
                                     size="sm"
                                     fontSize="sm"
                                     colorScheme="purple"
                                     leftIcon={<Icon as={RiPencilLine}/>}>
                                         Editar
-                                    </Button> 
+                                    </Button>} 
                                 </Td>
                             </Tr>
 
                             <Tr>
-                                <Td  px="6">
+                                <Td px={["4", "4", "6"]}>
                                     <Checkbox colorScheme="pink" />
                                 </Td>
                                 <Td>
@@ -100,21 +109,21 @@ export default function UserList() {
                                         <Text fontSize="sm" color="gray.300">rodrigoteix1998@gmail.com</Text>
                                     </Box>
                                 </Td>
-                                <Td>04 de Abril de 2021</Td>
+                                { isWideVersion && <Td>03 de Abril de 2021</Td> }
                                 <Td>
-                                    <Button
+                                    { isWideVersion && <Button
                                     as="a"
                                     size="sm"
                                     fontSize="sm"
                                     colorScheme="purple"
                                     leftIcon={<Icon as={RiPencilLine}/>}>
                                         Editar
-                                    </Button> 
+                                    </Button> }
                                 </Td>
                             </Tr>
 
                             <Tr>
-                                <Td  px="6">
+                                <Td px={["4", "4", "6"]}>
                                     <Checkbox colorScheme="pink" />
                                 </Td>
                                 <Td>
@@ -123,16 +132,16 @@ export default function UserList() {
                                         <Text fontSize="sm" color="gray.300">rodrigoteix1998@gmail.com</Text>
                                     </Box>
                                 </Td>
-                                <Td>04 de Abril de 2021</Td>
+                                { isWideVersion && <Td>03 de Abril de 2021</Td> }
                                 <Td>
-                                    <Button
+                                    {isWideVersion && <Button
                                     as="a"
                                     size="sm"
                                     fontSize="sm"
                                     colorScheme="purple"
                                     leftIcon={<Icon as={RiPencilLine}/>}>
                                         Editar
-                                    </Button> 
+                                    </Button>} 
                                 </Td>
                             </Tr>
 

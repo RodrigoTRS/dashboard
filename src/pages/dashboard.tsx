@@ -1,5 +1,6 @@
 import { Box, Flex, SimpleGrid, Text, theme } from "@chakra-ui/react";
 import dynamic from 'next/dynamic'
+import { ApexOptions } from 'apexcharts';
 import { Header } from "../components/Header/index";
 import { Sidebar } from "../components/Sidebar";
 
@@ -7,7 +8,7 @@ const Chart = dynamic(() => import('react-apexcharts'), {
     ssr: false
 })
 
-const options = {
+const options: ApexOptions = {
     chart: {
         toolbar: {
             show: false,
@@ -27,7 +28,7 @@ const options = {
         enabled: false,
     },
     xaxis: {
-        type: "datetime",
+        type: 'datetime',
         axisBorder: {
             color: theme.colors.gray[600],
         },
@@ -86,7 +87,7 @@ export default function Dashboard () {
                     minChildWidth="320px">
                         
                         <Box
-                            p="8"
+                            p={["4", "8"]}
                             bg="gray.800"
                             borderRadius="8"
                             boxShadow="0 4px 6px 2px #13131b2d"
