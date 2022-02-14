@@ -1,6 +1,6 @@
 import { Box, Button, Divider, Flex, Heading, SimpleGrid, Stack } from "@chakra-ui/react";
 import { Input } from '../../components/Form/Input'
-import { Header } from "../../components/Header";
+import { Header } from "../../components/Header/index";
 import { Sidebar } from "../../components/Sidebar";
 
 export default function CreateUser() {
@@ -15,13 +15,21 @@ export default function CreateUser() {
                 my="6"
                 maxWidth="1400"
                 mx="auto"
-                px="6">
+                px="6"
+                >
                     
                 <Sidebar />
 
-                <Box flex="1" borderRadius="8" bg="gray.800" p="8">
+                <Box
+                  flex="1"
+                  borderRadius="8"
+                  bg="gray.800"
+                  p="8"
+                  boxShadow="0 4px 6px 2px #13131b2d"
+                  border="1px solid"
+                  borderColor="gray.700">
 
-                    <Heading size="lg" fontWeight="normal"> Criar usuário</Heading>
+                    <Heading size="md" fontWeight="normal"> Criar usuário</Heading>
 
                     <Divider my="6" borderColor="gray.700" />
 

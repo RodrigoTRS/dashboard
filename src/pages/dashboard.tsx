@@ -1,6 +1,6 @@
 import { Box, Flex, SimpleGrid, Text, theme } from "@chakra-ui/react";
 import dynamic from 'next/dynamic'
-import { Header } from "../components/Header";
+import { Header } from "../components/Header/index";
 import { Sidebar } from "../components/Sidebar";
 
 const Chart = dynamic(() => import('react-apexcharts'), {
@@ -27,7 +27,7 @@ const options = {
         enabled: false,
     },
     xaxis: {
-        type: 'datetime',
+        type: "datetime",
         axisBorder: {
             color: theme.colors.gray[600],
         },
@@ -38,6 +38,7 @@ const options = {
             '2021-03-18T00:00:00.000Z',
             '2021-03-19T00:00:00.000Z',
             '2021-03-20T00:00:00.000Z',
+            '2021-03-21T00:00:00.000Z',
             '2021-03-22T00:00:00.000Z',
             '2021-03-23T00:00:00.000Z'
         ]
@@ -75,7 +76,8 @@ export default function Dashboard () {
                     my="6"
                     maxW="1400"
                     mx="auto"
-                    px="6">
+                    px="6"
+                    >
 
                     <Sidebar />
                     <SimpleGrid
@@ -84,9 +86,15 @@ export default function Dashboard () {
                     minChildWidth="320px">
                         
                         <Box
-                          p="8"
-                          bg="gray.800"
-                          borderRadius="8">
+                            p="8"
+                            bg="gray.800"
+                            borderRadius="8"
+                            boxShadow="0 4px 6px 2px #13131b2d"
+                            border="1px solid"
+                            borderColor="gray.700"
+                            _hover={{
+                                borderColor: "gray.600"
+                        }}>
                             
                             <Text fontSize="lg" mb="4">Inscritos da semana</Text>
                             <Chart options={options} series={series} type="area" height={160} />
@@ -94,11 +102,18 @@ export default function Dashboard () {
                         </Box>
 
                         <Box
-                          p="8"
-                          bg="gray.800"
-                          borderRadius="8">
+                            p="8"
+                            bg="gray.800"
+                            borderRadius="8"
+                            boxShadow="0 4px 6px 2px #13131b2d"
+                            border="1px solid"
+                            borderColor="gray.700"
+                            _hover={{
+                                borderColor: "gray.600"
+                        }}>
                             
                             <Text fontSize="lg" mb="4">Taxa de abertura</Text>
+                            <Chart options={options} series={series} type="area" height={160} />
 
                         </Box>
 

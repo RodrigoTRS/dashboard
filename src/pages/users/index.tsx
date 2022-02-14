@@ -1,6 +1,6 @@
 import { Box, Button, Flex, Heading, Icon, Table, Th, Thead, Tr, Checkbox, Tbody, Td, Text } from "@chakra-ui/react";
 import { RiAddLine, RiPencilLine } from "react-icons/ri";
-import { Header } from "../../components/Header";
+import { Header } from "../../components/Header/index";
 import { Pagination } from "../../components/Pagination";
 import { Sidebar } from "../../components/Sidebar";
 
@@ -24,7 +24,10 @@ export default function UserList() {
                     flex="1"
                     borderRadius="8"
                     bg="gray.800"
-                    p="8">
+                    p="8"
+                    boxShadow="0 4px 6px 2px #13131b2d"
+                    border="1px solid"
+                    borderColor="gray.700">
 
                     <Flex
                     mb="8"
@@ -32,7 +35,7 @@ export default function UserList() {
                     align="center">
 
                         <Heading
-                        size="lg"
+                        size="md"
                         fontWeight="normal">
                             Usuários
                         </Heading>
@@ -49,10 +52,10 @@ export default function UserList() {
 
                     </Flex>
 
-                    <Table colorScheme="whiteAlpha">
+                    <Table colorScheme="whiteAlpha" >
                         
                         <Thead>
-                            <Tr>
+                            <Tr bg="#181823">
                                 <Th px="6" color="gray.300" width="8">
                                     <Checkbox colorScheme="pink" />
                                 </Th>
