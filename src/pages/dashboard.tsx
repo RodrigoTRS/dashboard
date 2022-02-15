@@ -95,7 +95,6 @@ export default function Dashboard () {
                             p={["4", "8"]}
                             bg="gray.800"
                             borderRadius="8"
-                            boxShadow="0 4px 6px 2px #13131b2d"
                             border="1px solid"
                             borderColor="gray.700"
                             _hover={{
@@ -111,7 +110,6 @@ export default function Dashboard () {
                             p="8"
                             bg="gray.800"
                             borderRadius="8"
-                            boxShadow="0 4px 6px 2px #13131b2d"
                             border="1px solid"
                             borderColor="gray.700"
                             _hover={{

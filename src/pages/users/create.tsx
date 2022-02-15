@@ -60,7 +60,6 @@ export default function CreateUser() {
                   borderRadius="8"
                   bg="gray.800"
                   p="8"
-                  boxShadow="0 4px 6px 2px #13131b2d"
                   border="1px solid"
                   borderColor="gray.700"
                   onSubmit={handleSubmit(handleCreateUser)}>
@@ -116,7 +115,7 @@ export default function CreateUser() {
                     <Flex mt="8" justify="flex-end">
                         <Stack spacing="2" direction="row">
                             <Link href="/users" passHref>
-                                <Button as="a" colorScheme="whiteAlpha" size="sm">Cancelar</Button>
+                                <Button as="a" colorScheme="whiteAlpha" color="gray.100" size="sm">Cancelar</Button>
                             </Link>
                             <Button colorScheme="pink" size="sm" type="submit" isLoading={formState.isSubmitting}>Salvar</Button>
                         </Stack>

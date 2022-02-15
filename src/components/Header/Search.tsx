@@ -26,10 +26,11 @@ export function Search() {
     ml="6"
     maxW="400"
     align="center"
+    
     color="gray.200"
     position="relative"
-    bg="gray.700"
-    boxShadow="0 4px 6px 2px #13131b2d"
+    bg="gray.800"
+    
     border="1px solid"
     borderColor="gray.600"
     borderRadius="full"
