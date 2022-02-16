@@ -1,9 +1,11 @@
-import { Flex, Button, Stack } from '@chakra-ui/react'
+import { Flex, Button, Stack } from "@chakra-ui/react"
 import { SubmitHandler, useForm } from 'react-hook-form' 
 import Head from 'next/head'
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup'
 import { Input } from '../components/Form/Input'
+import { GetServerSideProps } from "next";
+import { getUsers } from "../services/hooks/useUsers";
 
 type SignInFormData = {
   email: string;
@@ -77,4 +79,15 @@ export default function Home() {
       </Flex>
     </>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async () => {
+
+  const {users, totalCount} = await getUsers(1)
+
+  return {
+    props: {
+      users,
+    }
+  }
 }
